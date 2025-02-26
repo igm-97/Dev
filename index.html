@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artista Multimedia</title>
+    <title>Portafolio - Artista Multimedia & Desarrollador</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
+    <!-- Menú de Navegación -->
     <header>
         <nav>
-            <div class="logo">Artista Multimedia</div>
+            <div class="logo">[Tu Nombre]</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#portfolio">Portafolio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="menu-toggle" id="mobile-menu">
@@ -24,49 +27,125 @@
         </nav>
     </header>
 
+    <!-- Sección Hero -->
     <section id="inicio" class="hero">
-        <h1>Bienvenido a mi Mundo Creativo</h1>
-        <p>Explora mi arte y descubre mi pasión por la multimedia.</p>
+        <h1>Transformo visiones en <span>experiencias digitales interactivas</span></h1>
+        <p class="subtitle">Artista Multimedia + Desarrollador Front-End</p>
     </section>
 
-   <section id="portfolio" class="portfolio">
-    <h2>Portafolio</h2>
-    <div class="gallery">
-        <!-- Proyecto 1 -->
-        <div class="project-item" data-sketch="sketch1">
-            <div class="sketch-container"></div>
-            <h3>Proyecto 1</h3>
-            <p>Descripción breve</p>
-        </div>
+    <!-- Portafolio -->
+    <section id="portfolio" class="portfolio">
+        <h2>Exploraciones Digitales</h2>
+        <div class="gallery">
+            
+            <!-- Proyecto 1 -->
+            <div class="project-item" data-sketch="fluir-cosmico">
+                <div class="sketch-container"></div>
+                <h3>"Fluir Cósmico"</h3>
+                <p>Instalación web interactiva usando geometría generativa</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML5 Canvas</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">p5.js</span>
+                </div>
+            </div>
 
-        <!-- Proyecto 2 -->
-        <div class="project-item" data-sketch="sketch2">
-            <div class="sketch-container"></div>
-            <h3>Proyecto 2</h3>
-            <p>Descripción breve</p>
-        </div>
-    </div>
-</section>
+            <!-- Proyecto 2 -->
+            <div class="project-item" data-sketch="ecos-silencio">
+                <div class="sketch-container"></div>
+                <h3>"Ecos del Silencio"</h3>
+                <p>Sitio web narrativo con scroll animado</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">CSS Animations</span>
+                    <span class="tech-tag">Vanilla JS</span>
+                    <span class="tech-tag">Web Audio API</span>
+                </div>
+            </div>
 
+            <!-- Proyecto 3 -->
+            <div class="project-item" data-sketch="laberintos-luminosos">
+                <div class="sketch-container"></div>
+                <h3>"Laberintos Luminosos"</h3>
+                <p>Juego web experimental con física personalizada</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">CSS Variables</span>
+                    <span class="tech-tag">SVG Filters</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
     <section id="sobre-mi" class="about">
-        <h2>Sobre Mí</h2>
-        <p>Información sobre el artista y su trayectoria.</p>
+        <h2>Donde el arte y el código convergen</h2>
+        <div class="bio">
+            <p>Como artista digital autodidacta, he encontrado en el desarrollo web un lienzo infinito para crear experiencias inmersivas. Durante 3 años he experimentado combinando:</p>
+            <ul class="habilidades">
+                <li>🖌️ Diseño orgánico con CSS Grid/Flexbox</li>
+                <li>🌀 Animaciones fluidas con CSS Keyframes</li>
+                <li>⚡ Interacciones dinámicas con Vanilla JavaScript</li>
+                <li>🎨 Visualizaciones con Canvas/SVG</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <h2>Creaciones a Medida</h2>
+        <div class="service-cards">
+            
+            <div class="service-card">
+                <h3>🖌️ Sitios Web Artísticos</h3>
+                <ul>
+                    <li>Portafolios interactivos</li>
+                    <li>Experiencias narrativas</li>
+                    <li>Microsites experimentales</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🌀 Arte Generativo Web</h3>
+                <ul>
+                    <li>Visualizaciones de datos</li>
+                    <li>Instalaciones interactivas</li>
+                    <li>Generación procedural</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>⚡ Experiencias Inmersivas</h3>
+                <ul>
+                    <li>Parallax avanzado</li>
+                    <li>Animaciones SVG</li>
+                    <li>Juegos experimentales</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
     <section id="contacto" class="contact">
-        <h2>Contacto</h2>
+        <h2>¿Listo para materializar lo imposible?</h2>
         <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="tu@email.com" required>
+            <textarea placeholder="Cuéntame tu visión..." rows="5" required></textarea>
+            <button type="submit">Enviar mensaje creativo</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Artista Multimedia. Todos los derechos reservados.</p>
+        <p>© 2023 [Tu Nombre] - Tejiendo realidades digitales con 
+            <span class="corazon">♥</span>, 
+            <span class="codigo">{ código }</span> 
+            y <span class="arte">arte</span>
+        </p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="sketches.js"></script> <!-- Aquí irían tus sketches de p5.js -->
     <script src="script.js"></script>
 </body>
 </html>
