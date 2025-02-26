@@ -1,60 +1,70 @@
+// Control del Menú Móvil
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const body = document.body;
 
-// Abrir/cerrar menú móvil
 mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     mobileMenu.classList.toggle('active');
-    
-    // Bloquear el scroll del body cuando el menú está abierto
-    if (navLinks.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
 });
 
-// Cerrar menú al hacer clic en un enlace (opcional)
+// Cerrar menú al hacer clic en enlace
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        body.style.overflow = 'auto';
     });
 });
 
-// Scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
+// Control de Sketches p5.js
 let activeSketch = null;
 
-document.querySelectorAll('.project-item').forEach(item => {
-    item.addEventListener('click', function() {
-        // Detener el sketch anterior
+document.querySelectorAll('.project-item').forEach(project => {
+    project.addEventListener('click', function() {
         if (activeSketch) {
             activeSketch.remove();
             activeSketch = null;
         }
-
-        // Obtener el contenedor y el identificador del sketch
-        const container = this.querySelector('.sketch-container');
+        
         const sketchId = this.dataset.sketch;
-
-        // Inicializar el sketch correspondiente
+        const container = this.querySelector('.sketch-container');
+        
         switch(sketchId) {
-            case 'sketch1':
-                activeSketch = new p5(sketch1, container);
+            case 'fluir-cosmico':
+                activeSketch = new p5(fluirCosmico, container);
                 break;
-            case 'sketch2':
-                activeSketch = new p5(sketch2, container);
+            case 'ecos-silencio':
+                activeSketch = new p5(ecosSilencio, container);
+                break;
+            case 'laberintos-luminosos':
+                activeSketch = new p5(laberintosLuminosos, container);
                 break;
         }
     });
 });
+
+// Scroll Suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Ejemplo de Sketch p5.js (debes implementar los demás)
+function fluirCosmico(p) {
+    p.setup = () => {
+        let canvas = p.createCanvas(300, 250);
+        canvas.parent(p.currentSketch);
+        p.noStroke();
+    };
+
+    p.draw = () => {
+        p.background(255);
+        p.fill(p.random(150, 255), p.random(150, 255), p.random(150, 255));
+        p.ellipse(p.mouseX, p.mouseY, 50);
+    };
+}
