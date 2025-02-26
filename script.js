@@ -32,3 +32,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+let activeSketch = null;
+
+document.querySelectorAll('.project-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Detener el sketch anterior
+        if (activeSketch) {
+            activeSketch.remove();
+            activeSketch = null;
+        }
+
+        // Obtener el contenedor y el identificador del sketch
+        const container = this.querySelector('.sketch-container');
+        const sketchId = this.dataset.sketch;
+
+        // Inicializar el sketch correspondiente
+        switch(sketchId) {
+            case 'sketch1':
+                activeSketch = new p5(sketch1, container);
+                break;
+            case 'sketch2':
+                activeSketch = new p5(sketch2, container);
+                break;
+        }
+    });
+});
