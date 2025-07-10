@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Artista Multimedia & Desarrollador</title>
+    <title>Artista Multimedia</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
@@ -12,119 +11,78 @@
     <header>
         <nav>
             <div class="logo">Ivan Muñoz</div>
+            <div class="logo"></div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#portfolio">Portafolio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portfolio">Arte</a></li>
+                <li><a href="#sobre-mi">Arte</a></li>
+                <li><a href="#servicios">Arte</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+@@ -29,13 +29,13 @@
 
     <!-- Sección Hero -->
     <section id="inicio" class="hero">
         <h1>Transformo visiones en <span>experiencias digitales interactivas</span></h1>
         <p class="subtitle">Artista Multimedia + Desarrollador Front-End</p>
+        <h1><span>Experiencias digitales e interactivas</span></h1>
+        <p class="subtitle">Artista Multimedia</p>
     </section>
 
     <!-- Portafolio -->
     <section id="portfolio" class="portfolio">
         <h2>Exploraciones Digitales</h2>
+        <h2>Exploraciones</h2>
         <div class="gallery">
-            
+
             <!-- Proyecto 1 -->
-            <div class="project-item" data-sketch="fluir-cosmico">
-                <div class="sketch-container"></div>
-                <h3>"Fluir Cósmico"</h3>
-                <p>Instalación web interactiva usando geometría generativa</p>
+@@ -46,7 +46,7 @@ <h3>"Fluir Cósmico"</h3>
                 <div class="tech-tags">
 <script src="sketches/fluir-cosmico.js"></script>
 
                     <span class="tech-tag">HTML5 Canvas</span>
+                    <span class="tech-tag">HTML5</span>
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">p5.js</span>
                 </div>
-            </div>
-
-            <!-- Proyecto 2 -->
-            <div class="project-item" data-sketch="ecos-silencio">
-                <div class="sketch-container"></div>
-                <h3>"Ecos del Silencio"</h3>
-                <p>Sitio web narrativo con scroll animado</p>
-                <div class="tech-tags">
-
-<script src="sketches/ecos-silencio.js"></script>
-
-                    <span class="tech-tag">CSS Animations</span>
-                    <span class="tech-tag">Vanilla JS</span>
-                    <span class="tech-tag">Web Audio API</span>
-                </div>
-            </div>
-
-            </div>
-    </section>
+@@ -72,14 +72,16 @@ <h3>"Ecos del Silencio"</h3>
 
     <!-- Sobre Mí -->
     <section id="sobre-mi" class="about">
         <h2>Donde el arte y el código convergen</h2>
+        <h2>Arte ,todo tipo de arte</h2>
         <div class="bio">
             <p>Como artista digital autodidacta, he encontrado en el desarrollo web un lienzo infinito para crear experiencias inmersivas. Durante 3 años he experimentado combinando:</p>
+            <p> </p>
             <ul class="habilidades">
                 <li>🖌️ Diseño orgánico con CSS Grid/Flexbox</li>
                 <li>🌀 Animaciones fluidas con CSS Keyframes</li>
                 <li>⚡ Interacciones dinámicas con Vanilla JavaScript</li>
                 <li>🎨 Visualizaciones con Canvas/SVG</li>
+             <li>Multilenguaje y transmedialidad</li>
+<li>Competencia técnica digital</li>
+<li>Singularidad estética</li>
+<li>Experimentación constante</li>
+<li>Sinergia creativa</li>
+<li>Construcción colectiva</li>
             </ul>
         </div>
     </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="services">
-        <h2>Creaciones a Medida</h2>
-        <div class="service-cards">
-            
-            <div class="service-card">
-                <h3>🖌️ Sitios Web Artísticos</h3>
-                <ul>
-                    <li>Portafolios interactivos</li>
-                    <li>Experiencias narrativas</li>
-                    <li>Microsites experimentales</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>🌀 Arte Generativo Web</h3>
-                <ul>
-                    <li>Visualizaciones de datos</li>
-                    <li>Instalaciones interactivas</li>
-                    <li>Generación procedural</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>⚡ Experiencias Inmersivas</h3>
-                <ul>
-                    <li>Parallax avanzado</li>
-                    <li>Animaciones SVG</li>
-                    <li>Juegos experimentales</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+@@ -120,21 +122,16 @@ <h3>⚡ Experiencias Inmersivas</h3>
 
     <!-- Contacto -->
     <section id="contacto" class="contact">
         <h2>¿Listo para materializar lo imposible?</h2>
+        <h2>Materializa las ideas</h2>
         <form>
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="tu@email.com" required>
             <textarea placeholder="Cuéntame tu visión..." rows="5" required></textarea>
+
             <button type="submit">Enviar mensaje creativo</button>
         </form>
     </section>
@@ -135,11 +93,6 @@
             <span class="corazon">♥</span>, 
             <span class="codigo">{ código }</span> 
             y <span class="arte">arte</span>
+        <p>nuevas realidades multimediales
         </p>
     </footer>
-
-    <!-- Scripts -->
-    <script src="sketches.js"></script> <!-- Aquí irían tus sketches de p5.js -->
-    <script src="script.js"></script>
-</body>
-</html>
